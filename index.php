@@ -7,9 +7,8 @@ $page = (isset($_GET['p'])) ? $_GET['p']: 'home';
 // Twig template
 $loader = new Twig_Loader_Filesystem(__DIR__.'/templates');
 $twig = new Twig_Environment($loader, [
-    'cache'=> false // __DIR__.'/tmp'
+    'cache'=> false
 ]);
-
 
 $params =[];
 
