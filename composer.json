@@ -1,0 +1,15 @@
+{
+    "name": "luquet-f/webmapping",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Florent LUQUET",
+            "email": "florent.luquet@univ-nantes.fr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "twig/twig": "1.6.5"
+    }
+}
