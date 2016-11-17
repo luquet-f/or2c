@@ -1,0 +1,26 @@
+.ol-basemaps-panel {
+    background: rgba(0,0,0,0.75);
+    border-radius: 2px;
+    margin-left: 2px;
+}
+
+.ol-basemaps-panel:hover {
+    background: rgba(0,0,0,0.75);
+}
+
+.ol-basemaps-panel a.thumbnail {
+    border-radius: 2px;
+    padding: 2px;
+    margin: 5px;
+    border: none;
+    background: none;
+}
+
+.ol-basemaps-panel a.thumbnail:hover {
+    cursor: pointer;
+}
+
+.ol-basemaps-panel a.thumbnail img {
+    border: 1px solid #ddd;
+
+}

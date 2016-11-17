@@ -1,0 +1,76 @@
+var esriWorldTerrainMap = {
+source: new ol.source.XYZ({
+attributions: new ol.Attribution({
+html: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Map/MapServer">ESRI</a>'
+}),
+url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Map/MapServer/tile/{z}/{y}/{x}'
+}),
+basemaps: {
+id: 1,
+title: 'Label 1',
+alt: 'Label 1',
+src: 'static/img/thumbnails-aerial.png'
+}
+};
+
+var esriWorldTStreetMap = {
+source: new ol.source.XYZ({
+attributions: new ol.Attribution({
+html: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer">ESRI</a>'
+}),
+url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}'
+}),
+basemaps: {
+id: 1,
+title: 'Label 1',
+alt: 'Label 1',
+src: 'static/img/thumbnails-aerial.png'
+}
+};
+
+
+var esriWorldTopoMap = {
+source: new ol.source.XYZ({
+attributions: new ol.Attribution({
+html: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer">ESRI</a>'
+}),
+url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
+}),
+basemaps: {
+id: 1,
+title: 'Label 1',
+alt: 'Label 1',
+src: 'static/img/thumbnails-aerial.png'
+}
+};
+
+
+var esriImageryWorld2D = {
+source: new ol.source.XYZ({
+attributions: new ol.Attribution({
+html: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/rest/services/ESRI_Imagery_World_2D/MapServer">ESRI</a>'
+}),
+url: 'https://services.arcgisonline.com/arcgis/rest/services/ESRI_Imagery_World_2D/MapServer/tile/{z}/{y}/{x}'
+}),
+basemaps: {
+id: 1,
+title: 'Label 1',
+alt: 'Label 1',
+src: 'static/img/thumbnails-aerial.png'
+}
+};
+
+var esriStreetWorld2D = {
+source: new ol.source.XYZ({
+attributions: new ol.Attribution({
+html: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/rest/services/ESRI_StreetMap_World_2D/MapServer">ESRI</a>'
+}),
+url: 'https://services.arcgisonline.com/arcgis/rest/services/ESRI_StreetMap_World_2D/MapServer/tile/{z}/{y}/{x}'
+}),
+basemaps: {
+id: 1,
+title: 'Label 1',
+alt: 'Label 1',
+src: 'static/img/thumbnails-aerial.png'
+}
+};

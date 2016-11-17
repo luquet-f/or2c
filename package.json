@@ -1,7 +1,7 @@
 {
-  "name": "openlayers",
+  "name": "webmapping",
   "version": "0.1.0",
-  "description": "openlayers 3 demo",
+  "description": "Webmaps based on openlayers 3",
   "main": "app.js",
   "keywords": [
     "openlayers",
@@ -9,10 +9,19 @@
   ],
   "author": "Florent LUQUET",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luquet-f/or2c.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luquet-f/or2c/issues"
+  },
+  "homepage": "https://github.com/luquet-f/or2c",
   "dependencies": {
-    "openlayers": "openlayers/ol3#master"
+    "bootstrap": "^3.3.7",
+    "html5shiv": "^3.7.3",
+    "jquery": "^3.1.1"
   },
   "devDependencies": {
-
   }
 }
