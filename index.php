@@ -1,17 +1,35 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Exemple de page Openlayers</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.19.0/ol.css">
-        <link rel="stylesheet" href="static/css/style.css">
-    </head>
+<?php
+require 'vendor/autoload.php';
 
-    <body>
-        <div id="map" class="map"></div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.19.0/ol-debug.js"></script>
-        <script src="static/js/app.js"></script>
-    </body>
+// Routing
+$page = (isset($_GET['p'])) ? $_GET['p']: 'home';
 
-</html>
+// Twig template
+$loader = new Twig_Loader_Filesystem(__DIR__.'/templates');
+$twig = new Twig_Environment($loader, [
+    'cache'=> false // __DIR__.'/tmp'
+]);
+
+
+$params =[];
+
+switch ($page) {
+
+    case 'home':
+        $params = [
+            'person' => [
+                'fullname'=>'Florent LUQUET',
+                'age' => 38
+            ]
+        ];
+        break;
+
+    default:
+        header('HTTP/1.0 404 Not Found');
+        $page = '404';
+        break;
+}
+
+
+echo $twig->render($page.'.twig', $params);
+

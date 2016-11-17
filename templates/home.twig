@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %}
+
+{% block styles %}
+    {{ parent() }}
+    <link href="static/css/ol.css" rel="stylesheet">
+    <link href="static/ol3/plugins/ol3-basemaps-control/css/ol3-basemaps-control.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+    {% include 'navbar.twig' %}
+
+    <div class="container">
+        <div id="map" class="map"></div>
+        {#            Bonjour <strong>{{ person.fullname }}</strong> qui a {{ person.age }}.#}
+    </div>
+
+    {% include 'footer.twig' %}
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="static/js/ol-debug.js"></script>
+    <script src="static/ol3/plugins/ol3-basemaps-control/js/ol3-basemaps-control.js"></script>
+    <script src="static/js/app.js"></script>
+{% endblock %}
