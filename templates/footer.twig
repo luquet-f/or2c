@@ -1,16 +1,15 @@
-<footer class="footer">
-    <div class="container">
-
-        <a class="navbar-brand" href="#">Observatoire des Risques Côtiers</a>
-
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li></li>
-                <li><span>x : </span></li>
-                <li><span>y : </span></li>
-            </ul>
+<footer style="opacity: {{ css.opacity }}">
+    <div class="container-fluid">
+        <div class="row center">
+            <div class="col-xs-8">Produit par l'<a title="Retourner à la présentatio de l'Observatoire" href="#">Observatoire des Risques Côtiers</a></div>
+            <div class="dropup col-xs-2">
+                <p class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lat.long. WGS84<span class="caret"></span></p>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><a class="epsg" data-epsg="EPSG:2154" href="#">Lambert 93 - <i>EPSG 2154</i></a></li>
+                     <li><a class="epsg" data-epsg="EPSG:4326" href="#">Lat/long WGS84 - <i>EPSG 4326</i></a></li>
+                </ul>
+            </div>
+            <div id="mouse-position" class="col-xs-2 text-right"></div>
         </div>
-
-
     </div>
 </footer>

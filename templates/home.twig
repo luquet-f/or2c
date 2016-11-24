@@ -2,14 +2,13 @@
 
 {% block styles %}
     {{ parent() }}
-    <link href="static/css/ol.css" rel="stylesheet">
+    <link href="bower_components/ol3/ol.css" rel="stylesheet">
+    <link href="static/ol3/plugins/ol3-bootswatch/slate/ol-bootswatch.css" rel="stylesheet">
     <link href="static/ol3/plugins/ol3-basemaps-control/css/ol3-basemaps-control.css" rel="stylesheet">
     <link href="static/css/style.css" rel="stylesheet">
+    <link href="bower_components/ignol3/GpPluginOl3.css" rel="stylesheet">
+
 {% endblock %}
-
-
-
-
 
 {% block content %}
 
@@ -17,7 +16,6 @@
 
     <div class="container">
         <div id="map" class="map"></div>
-        {#            Bonjour <strong>{{ person.fullname }}</strong> qui a {{ person.age }}.#}
     </div>
 
     {% include 'footer.twig' %}
@@ -26,7 +24,8 @@
 
 {% block scripts %}
     {{ parent() }}
-    <script src="static/js/ol-debug.js"></script>
+    <script src="bower_components/ol3/ol-debug.js"></script>
     <script src="static/ol3/plugins/ol3-basemaps-control/js/ol3-basemaps-control.js"></script>
+    <script data-key="5ba7zrkmpo0ymyuyi24y552e" src="bower_components/ignol3/GpPluginOl3.js"></script>
     <script src="static/js/app.js"></script>
 {% endblock %}

@@ -61,7 +61,8 @@ ol.control.Basemaps.prototype._defineOptions = function(options) {
         },
         panel:{
             layers: [],
-            openOnLoad: false
+            openOnLoad: false,
+            title: 'Sélectionnez le fonds de carte à afficher'
         },
         className: 'ol-basemaps-panel',
         element: null,
@@ -82,21 +83,28 @@ ol.control.Basemaps.prototype._defineElement = function(options) {
 
     var self = this;
 
-    var ul = document.createElement('ul');
-    ul.className = 'dropdown-menu ol-control ' + options.className;
-    ul.setAttribute("aria-labelledby", 'dropdownMenu1');
+    var panel = document.createElement('div');
+    panel.className = 'dropdown-menu panel panel-default ' + options.className;
+    panel.setAttribute("aria-labelledby", 'dropdownMenu1');
 
-    var divFluid = document.createElement('div');
-    divFluid.className = 'container-fluid';
+    var panelHeading = document.createElement('div');
+    panelHeading.className = 'panel-heading';
+    panelHeading.innerHTML = options.panel.title;
+    panel.appendChild(panelHeading);
 
-    var div = document.createElement('div');
-    div.className = 'row';
+
+
+
+    var panelBody = document.createElement('div');
+    panelBody.className = 'row panel-body';
+
+
 
     options.panel.layers.forEach(function(item) {
         if (item.hasOwnProperty('basemaps')) {
 
             var divCol = document.createElement('div');
-            divCol.className = 'col-xs-3';
+            divCol.className = 'col-xs-2 no-padding';
 
             var a  = document.createElement('a');
             a.className = 'thumbnail';
@@ -112,33 +120,15 @@ ol.control.Basemaps.prototype._defineElement = function(options) {
 
             a.appendChild(img);
             divCol.appendChild(a);
-            div.appendChild(divCol);
+            panelBody.appendChild(divCol);
 
 
         }
 
     });
 
-    divFluid.appendChild(div);
-
-
-/*
-    var li = document.createElement('li');
-    li.innerHTML = 'Action';
-    ul.appendChild(li);
-
-    li = document.createElement('li');
-    li.innerHTML = 'dfsd';
-    ul.appendChild(li);
-    ul.appendChild(li);
-
-    li = document.createElement('li');
-    li.innerHTML = 'ghgjghj';*/
-    //ul.innerHTML = '<div class = "row"> <div class = "col-sm-6 col-md-3"> <a href = "#" class = "thumbnail"> <img src = "/bootstrap/images/kittens.jpg" alt = "Generic placeholder thumbnail"> </a> </div> <div class = "col-sm-6 col-md-3"> <a href = "#" class = "thumbnail"> <img src = "/bootstrap/images/kittens.jpg" alt = "Generic placeholder thumbnail"> </a> </div> <div class = "col-sm-6 col-md-3"> <a href = "#" class = "thumbnail"> <img src = "/bootstrap/images/kittens.jpg" alt = "Generic placeholder thumbnail"> </a> </div> <div class = "col-sm-6 col-md-3"> <a href = "#" class = "thumbnail"> <img src = "/bootstrap/images/kittens.jpg" alt = "Generic placeholder thumbnail"> </a> </div> </div>';
-
-
-    ul.appendChild(divFluid);
-    return ul;
+    panel.appendChild(panelBody);
+    return panel;
 };
 
 /**

@@ -1,0 +1,7 @@
+.ol-control button {
+    background-color: rgba(58, 63, 68, 0.85) !important;
+}
+
+.ol-control button:focus, .ol-control button:hover {
+    background-color: rgba(58, 63, 68, 1) !important;
+}
