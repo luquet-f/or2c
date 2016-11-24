@@ -195,11 +195,7 @@ function loadMap(response) {
             })
         ],
         target: 'map',
-        controls: ol.control.defaults({
-            attributionOptions: ({
-                collapsible: false
-            })
-        }),
+        controls: [],
         view: new ol.View({
             center: [0, 0],
             zoom: 2
@@ -267,15 +263,71 @@ function loadMap(response) {
     map.addLayer(layerCommunesPapi);
     map.addLayer(layerPapi);
 
-    map.addControl(new ol.control.ZoomToExtent({
-        extent: fullExtent
-    }));
-
-
-
+    /**
+     * Add a control on the map to the corner position
+     */
+    var topRightControlContainer = addCornerControls('top-right');
+    map.addControl(topRightControlContainer);
 
     /**
-     * Load ol3-basemaps-control on the map
+     * Add a control on the map to the corner position
+     */
+    var topLeftControlContainer = addCornerControls('top-left');
+    map.addControl(topLeftControlContainer);
+
+    /**
+     * Add default zoom controls on the map
+     */
+    map.addControl(new ol.control.Zoom({
+        target: topRightControlContainer['element'],
+        className: 'ol-zoom ol-fluid'
+    }));
+
+    /**
+     * Add zoom to extent control on the map
+     */
+    var nodeZoomToExtent = document.createElement('span');
+    nodeZoomToExtent.className = 'glyphicon glyphicon-fullscreen';
+    map.addControl(new ol.control.ZoomToExtent({
+        target: topRightControlContainer['element'],
+        extent: fullExtent,
+        className: 'ol-zoom-extent ol-fluid',
+        label: nodeZoomToExtent
+    }));
+
+    /**
+     * Add full screen control on the map
+     */
+    var nodeFullScreen = document.createElement('span');
+    nodeFullScreen.className = 'glyphicon glyphicon-resize-full';
+    map.addControl(new ol.control.FullScreen({
+        target: topRightControlContainer['element'],
+        className: 'ol-full-screen ol-fluid',
+        label: nodeFullScreen
+    }));
+
+    /**
+     * Add retractable panel control on the map
+     */
+    var nodePanel = document.createElement('span');
+    nodePanel.className = 'glyphicon glyphicon-th-list';
+    map.addControl(new ol.control.Panel({
+        target: topLeftControlContainer['element'],
+        className: 'ol-panel ol-fluid',
+        label: nodePanel,
+        button: {
+            title: {
+                panelClose: 'Ouvrir',
+                panelOpen: 'Fermer'
+            }
+        },
+        panel: {
+            openOnLoad: true
+        }
+    }));
+
+    /**
+     * Add basemaps control outside the map
      */
     var basemapsControl = new ol.control.Basemaps({
         panel: {
@@ -314,7 +366,21 @@ function loadMap(response) {
 
 }
 
+/**
+ * Create a control panel on the map to a specific fixed position
+ * @param {string} controlPosition
+ * @returns {ol.control.Control}
+ */
+function addCornerControls(controlPosition) {
 
+    var controlElement = document.createElement('div');
+    controlElement.className = controlPosition;
+
+    return new ol.control.Control({
+        element: controlElement
+    });
+
+}
 
 
 

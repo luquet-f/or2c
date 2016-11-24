@@ -120,7 +120,36 @@ footer span.caret {
 /* --------------------------------------------------
 Overrides ol3 buttons controls position
 -------------------------------------------------- */
-.ol-zoom, .ol-rotate, .ol-zoom-extent {
-    right: .5em;
-    left: inherit;
+
+.ol-overlaycontainer-stopevent > div,
+.ol-overlaycontainer > div {
+    position: fixed;
+    top: 59px;
 }
+
+.ol-overlaycontainer-stopevent > div.top-right,
+.ol-overlaycontainer > div.top-right {
+    right: 7px;
+}
+
+.ol-overlaycontainer-stopevent > div.top-left,
+.ol-overlaycontainer > div.top-left {
+    left: 7px;
+}
+
+.ol-overlaycontainer-stopevent > div > div.ol-fluid,
+.ol-overlaycontainer > div > div.ol-fluid {
+    position: relative;
+    top: 0;
+}
+
+.ol-control {
+    left: 0;
+    right: 0;
+}
+
+.ol-control button {
+    height: 1.775em;
+    width: 1.775em;
+}
+
