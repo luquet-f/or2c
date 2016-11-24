@@ -3,9 +3,12 @@
 {% block styles %}
     {{ parent() }}
     <link href="bower_components/ol3/ol.css" rel="stylesheet">
-    <link href="static/ol3/plugins/ol3-bootswatch/slate/ol-bootswatch.css" rel="stylesheet">
-    <link href="static/ol3/plugins/ol3-basemaps-control/css/ol3-basemaps-control.css" rel="stylesheet">
+    <link href="static/ol3/plugins/ol3-bootswatch/ol3-bootswatch-slate.css" rel="stylesheet">
+    <link href="static/ol3/plugins/ol3-basemaps/css/ol3-basemaps-control.css" rel="stylesheet">
+    <link href="static/ol3/plugins/ol3-panel/css/ol3-panel-control.css" rel="stylesheet">
+
     <link href="static/css/style.css" rel="stylesheet">
+
     <link href="bower_components/ignol3/GpPluginOl3.css" rel="stylesheet">
 
 {% endblock %}
@@ -25,7 +28,8 @@
 {% block scripts %}
     {{ parent() }}
     <script src="bower_components/ol3/ol-debug.js"></script>
-    <script src="static/ol3/plugins/ol3-basemaps-control/js/ol3-basemaps-control.js"></script>
-    <script data-key="5ba7zrkmpo0ymyuyi24y552e" src="bower_components/ignol3/GpPluginOl3.js"></script>
+    <script src="static/ol3/plugins/ol3-basemaps/js/ol3-basemaps-control.js"></script>
+    <script src="static/ol3/plugins/ol3-panel/js/ol3-panel-control.js"></script>
+    <script src="bower_components/ignol3/GpPluginOl3.js"></script>
     <script src="static/js/app.js"></script>
 {% endblock %}
